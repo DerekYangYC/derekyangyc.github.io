@@ -1,0 +1,436 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Leetcode-Unique Paths | TechYC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Derek.YC">
+    
+    <meta name="description" content="Unique Paths题目A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).
+The robot can only move either down or ">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TechYC">TechYC</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					</li>
+                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
+
+				</ul>
+			</nav>	
+</div>
+
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/08/07/leetcode-unique-paths/" title="Leetcode-Unique Paths" itemprop="url">Leetcode-Unique Paths</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://derekyangyc.github.io" title="Derek.YC">Derek.YC</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-08-07T09:56:24.000Z" itemprop="datePublished">Aug 7 2014</time>
+    更新日期:<time datetime="2015-04-26T14:32:53.903Z" itemprop="dateModified">Apr 26 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unique_Paths"><span class="toc-number">1.</span> <span class="toc-text">Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.2.</span> <span class="toc-text">思路</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="Unique_Paths">Unique Paths</h2><h3 id="题目">题目</h3><p>A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>How many possible unique paths are there?</p>
+<p><img src="/img/robot_maze.png" alt=""></p>
+<p>Above is a 3 x 7 grid. How many possible unique paths are there?</p>
+<p>Note: m and n will be at most 100.</p>
+<h3 id="思路">思路</h3><p>此题与<code>Project Euler</code>的<a href="http://projecteuler.net/problem=15" target="_blank" rel="external">第15题</a>类似。</p>
+<p>题目可以抽象为在坐标的第四象限，从原点(0,0)走到(m-1,n-1)有多少种方法。</p>
+<p>关键的思路在于，发现<code>到(x,y)的走法数=到(x-1,y)的走法数+到(x,y-1)的走法数</code>，如下图</p>
+<p><img src="/img/lattice_paths_4.png" alt=""></p>
+<p>找到这个关键的递推公式后，无论是利用递归还是动态规划，都能解决问题：</p>
+<pre><code><span class="comment">//Use dp</span>
+<span class="keyword">public</span> <span class="function"><span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>{
+
+    <span class="keyword">if</span> (m &lt;= <span class="number">0</span> || n &lt;= <span class="number">0</span>) {
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }
+
+    <span class="keyword">int</span>[][] paths = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];
+
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) {
+        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) {
+
+            <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) {
+                paths[i][j] = <span class="number">1</span>;
+            } <span class="keyword">else</span> {
+                paths[i][j] = paths[i - <span class="number">1</span>][j] + paths[i][j - <span class="number">1</span>];
+            }
+
+        }
+    }
+
+    <span class="keyword">return</span> paths[m - <span class="number">1</span>][n - <span class="number">1</span>];
+}
+
+
+<span class="comment">//Use Recursion</span>
+<span class="keyword">public</span> <span class="function"><span class="keyword">int</span> <span class="title">uniquePaths2</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>{
+
+    <span class="keyword">if</span> (m &lt;= <span class="number">0</span> || n &lt;= <span class="number">0</span>)
+        <span class="keyword">return</span> <span class="number">0</span>;
+
+    <span class="function"><span class="keyword">return</span> <span class="title">cal</span><span class="params">(m - <span class="number">1</span>, n - <span class="number">1</span>)</span></span>;
+
+}
+<span class="keyword">public</span> <span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>{
+    <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) {
+        <span class="keyword">return</span> <span class="number">1</span>;
+    } <span class="keyword">else</span> {
+        <span class="keyword">return</span> cal(i - <span class="number">1</span>, j) + cal(i, j - <span class="number">1</span>);
+    }
+}
+</code></pre><p>第一次遇到这题是一次（失败的）面试。面试官开口第一道题便是这题。当时不知道是脑袋浆糊了还是过于紧张，反正没答出来。</p>
+<p>之后看过<a href="http://oldj.net/article/lattice-paths/" target="_blank" rel="external">一个解法</a>后就明白了。还有一个更加直观的思路，在坐标系中，只能向右或者向上走，从原点到坐标(m,n)，无论怎么走，向右都得走m步，向上都得走n步，才能到达(m,n)。所以的话，总共不同的走法数是，$(m+n)\choose m$</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/dp/">dp</a><a href="/tags/leetcode/">leetcode</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://derekyangyc.github.io/2014/08/07/leetcode-unique-paths/" data-title="Leetcode-Unique Paths | TechYC" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/08/12/about-tx-by-extxer/" title="鹅厂前员工稍微谈谈鹅厂(转)">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  鹅厂前员工稍微谈谈鹅厂(转)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/08/07/leetcode-triangle/"  title="Leetcode-Triangle">
+ <strong>NEXT:</strong><br/> 
+ <span>Leetcode-Triangle
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"yyc"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>  
+      
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unique_Paths"><span class="toc-number">1.</span> <span class="toc-text">Unique Paths</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.2.</span> <span class="toc-text">思路</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		<a href="https://github.com/DerekYangYC" target="_blank" title="github"></a>
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/interview/" title="interview">interview<sup>1</sup></a></li>
+		
+			<li><a href="/categories/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li></ul>
+  </div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>3</sup></a></li>
+		
+			<li><a href="/tags/company/" title="company">company<sup>1</sup></a></li>
+		
+			<li><a href="/tags/data-structure/" title="data structure">data structure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/interview/" title="interview">interview<sup>1</sup></a></li>
+		
+			<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yyc"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
+}); 
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </body>
+</html>

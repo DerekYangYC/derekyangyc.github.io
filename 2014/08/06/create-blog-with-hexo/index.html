@@ -1,0 +1,408 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>使用Hexo搭建博客 | TechYC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Derek.YC">
+    
+    <meta name="description" content="最近觉得用markdown来写点东西，是个相当愉快的过程，因此萌生了搭一个支持markdown的博客。比较来比较去，觉得github+hexo比较方便快捷，而且够geek。
+安装由于我在windows使用hexo，安装过程也略微叙述一下。安装hexo需要用到git和node.js，git和node.">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TechYC">TechYC</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					</li>
+                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
+
+				</ul>
+			</nav>	
+</div>
+
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/08/06/create-blog-with-hexo/" title="使用Hexo搭建博客" itemprop="url">使用Hexo搭建博客</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://derekyangyc.github.io" title="Derek.YC">Derek.YC</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-08-06T06:27:00.000Z" itemprop="datePublished">Aug 6 2014</time>
+    更新日期:<time datetime="2015-04-26T14:57:11.186Z" itemprop="dateModified">Apr 26 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步"><span class="toc-number">4.</span> <span class="toc-text">同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多说"><span class="toc-number">5.</span> <span class="toc-text">多说</span></a></li></ol>
+		</div>
+		
+		<p>最近觉得用<code>markdown</code>来写点东西，是个相当愉快的过程，因此萌生了搭一个支持<code>markdown</code>的博客。比较来比较去，觉得<code>github</code>+<code>hexo</code>比较方便快捷，而且够geek。</p>
+<h2 id="安装">安装</h2><p>由于我在windows使用<code>hexo</code>，安装过程也略微叙述一下。安装<code>hexo</code>需要用到<code>git</code>和<code>node.js</code>，<code>git</code>和<code>node.js</code>的安装很简单，下载对应版本，一路next即可。<code>linux</code>命令行环境的模拟，可以利用<code>git bash</code>和<code>ConEmu</code>解决。</p>
+<p>完成并确保<code>node.js</code>在环境变量里以后，在<code>ConEmu</code>输入如下命令即可安装<code>hexo</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>安装完毕后，进入一个目录，输入如下命令即可新建一个<code>hexo</code>工程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，<code>npm install</code>不可缺少。否则的话会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">生成页面错误</a>。</p>
+<h2 id="配置">配置</h2><p>配置方面，大部分配置可参考<a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">官网</a>。</p>
+<p>要注意的是，默认情况<code>deploy</code>是空，需要手动加入。例如我们要<code>deploy</code>到<code>github</code>上：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: github</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:DerekYangYC/derekyangyc.github.io.git</span><br></pre></td></tr></table></figure>
+<p><strong>尤其注意格式，冒号和值之间要预留一个空格！</strong></p>
+<p>除了<code>deploy</code>，<code>theme</code>也是一个要修改的地方，因为默认的主题，实在太丑。</p>
+<h2 id="使用">使用</h2><p>详细的使用也可参考<a href="http://hexo.io/docs/commands.html" target="_blank" rel="external">官网</a>, 不过我觉得，<code>hexo</code>的使用还是相当简单，来来去去都是这几个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>个人觉得，每次<code>hexo g</code>前都<code>clean</code>一下，比较好</p>
+<h2 id="同步">同步</h2><p>通过<code>hexo deploy</code>可以将本地博客部署到<code>github</code>上。<br>在部署前，根据上面<code>repo</code>的位置，新建一个<code>repo</code>：<code>derekyangyc.github.io</code></p>
+<p>每次部署，都会把<code>hexo</code>目录下的<code>public</code>文件夹，推送到<code>derekyangyc.github.io</code>这个<code>repo</code></p>
+<p>因为我的机器常使用<code>github</code>，这里省略了<code>ssh</code>的设置，详细可以看<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">这里</a></p>
+<p>但这样并不能解决在多台机器写博客的问题，因为<code>derekyangyc.github.io</code>上仅仅存的是<code>hexo</code>的<code>public</code>文件夹。</p>
+<p>解决的问题的方法有两个：</p>
+<ol>
+<li>利用<code>dropbox</code>等同步软件同步整个目录，但这样并不好。因为<code>public</code>等文件夹的文件经常改动，会引起不必要的同步。</li>
+<li>利用<code>github</code>保存整个<code>blog</code>目录。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"add all files"</span></span><br><span class="line">$ git remote add origin git@github.com:derekyangyc/blog.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>这样，在另外一台机器上只需要<code>clone</code>这个<code>repo</code>，然后进行修改再<code>push</code>回<code>github</code>，即可。</p>
+<h2 id="多说">多说</h2><p>我用的皮肤<a href="https://github.com/zhanglun/hexo-theme/tree/master/Tinny" target="_blank" rel="external">Tinny</a>，已经从<code>disqus</code>改成<code>多说</code>；但这不意味着马上能用。</p>
+<ul>
+<li>首先得去多说注册，并创建网站</li>
+<li>然后获得<code>通用代码</code></li>
+<li>然后在<code>_config.yml</code>和<code>comment.ejs</code>下，更改对应的<code>short_name</code></li>
+</ul>
+<p><img src="/img/duoshuo.png" alt=""></p>
+<p>这样多说才能使用。否则，使用别人的皮肤容易也把多说的<code>short_name</code>也一并使用，会造成评论乱入，自己的博客下出现不属于自己的评论。</p>
+<p>自此，博客才算基本搭好；一旦单搭好了博客，写东西可谓赏心悦目。</p>
+<p>参考：</p>
+<p><a href="http://syxiaqj.github.io/2014/02/19/introduce-hexo-theme/" target="_blank" rel="external">http://syxiaqj.github.io/2014/02/19/introduce-hexo-theme/</a></p>
+<p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
+<p><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/hexo/">hexo</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://derekyangyc.github.io/2014/08/06/create-blog-with-hexo/" data-title="使用Hexo搭建博客 | TechYC" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/08/06/datastructure-algo-interviews/" title="Top Data Structures and Algorithm Interview Questions">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Top Data Structures and Algorithm Interview Questions</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"yyc"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>  
+      
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步"><span class="toc-number">4.</span> <span class="toc-text">同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多说"><span class="toc-number">5.</span> <span class="toc-text">多说</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		<a href="https://github.com/DerekYangYC" target="_blank" title="github"></a>
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/interview/" title="interview">interview<sup>1</sup></a></li>
+		
+			<li><a href="/categories/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li></ul>
+  </div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>3</sup></a></li>
+		
+			<li><a href="/tags/company/" title="company">company<sup>1</sup></a></li>
+		
+			<li><a href="/tags/data-structure/" title="data structure">data structure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/interview/" title="interview">interview<sup>1</sup></a></li>
+		
+			<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yyc"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+<script type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ 
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
+}); 
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </body>
+</html>
