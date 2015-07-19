@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://derekyangyc.github.io/"/>
-  <updated>2015-07-19T05:08:37.768Z</updated>
+  <updated>2015-07-19T05:55:33.090Z</updated>
   <id>http://derekyangyc.github.io/</id>
   
   <author>
@@ -19,9 +19,13 @@
     <link href="http://derekyangyc.github.io/2015/07/19/upgrade-hexo3/"/>
     <id>http://derekyangyc.github.io/2015/07/19/upgrade-hexo3/</id>
     <published>2015-07-19T05:08:37.000Z</published>
-    <updated>2015-07-19T05:08:37.768Z</updated>
-    <content type="html"></content>
+    <updated>2015-07-19T05:55:33.090Z</updated>
+    <content type="html"><![CDATA[<p>abcd</p>
+<a id="more"></a>
+<p>abcd</p>
+]]></content>
     <summary type="html">
+    <![CDATA[<p>abcd</p>]]>
     
     </summary>
     
