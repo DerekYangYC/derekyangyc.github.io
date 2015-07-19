@@ -153,12 +153,12 @@
     <updated>2015-04-26T14:32:53.903Z</updated>
     <content type="html"><![CDATA[<h2 id="Triangle">Triangle</h2><h3 id="题目">题目</h3><p>Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.</p>
 <p>For example, given the following triangle</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">     [<span class="number">2</span>],</span><br><span class="line">    [<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">   [<span class="number">6</span>,<span class="number">5</span>,<span class="number">7</span>],</span><br><span class="line">  [<span class="number">4</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">3</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#10;     [2],&#10;    [3,4],&#10;   [6,5,7],&#10;  [4,1,8,3]&#10;]</span><br></pre></td></tr></table></figure>
 <p>The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).</p>
 <p>Note:<br>Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.</p>
 <h3 id="思路">思路</h3><p>经典DP题目，与<a href="http://poj.org/problem?id=1163" target="_blank" rel="external">POJ 1163</a>几乎一样。</p>
 <h4 id="第一次尝试">第一次尝试</h4><p>第一次尝试并未做对。只找出每一行的最小，然后加起来，这样的方法并不正确。像</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">     [<span class="number">2</span>],</span><br><span class="line">    [<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">   [<span class="number">6</span>,<span class="number">5</span>,<span class="number">2</span>],</span><br><span class="line">  [<span class="number">1</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">3</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#10;     [2],&#10;    [3,4],&#10;   [6,5,2],&#10;  [1,5,8,3]&#10;]</span><br></pre></td></tr></table></figure>
 <p>这棵树的最小值并不是(2+3+5+5=15)，而是11。</p>
 <h4 id="第二次尝试">第二次尝试</h4><p>思路改变，由上至下，遍历每一层的每个节点，计算到此节点的最小值，最后遍历最后一层，找出最小值，便是结果。</p>
 <p>下列代码，利用一数组<code>tmp</code>存上一层的计算结果，另一数组<code>tmpMin</code>存本层的计算结果：</p>
@@ -344,7 +344,7 @@
 <p>值得注意的是，<code>npm install</code>不可缺少。否则的话会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">生成页面错误</a>。</p>
 <h2 id="配置">配置</h2><p>配置方面，大部分配置可参考<a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">官网</a>。</p>
 <p>要注意的是，默认情况<code>deploy</code>是空，需要手动加入。例如我们要<code>deploy</code>到<code>github</code>上：</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: github</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:DerekYangYC/derekyangyc.github.io.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: github&#10;  repo: git@github.com:DerekYangYC/derekyangyc.github.io.git</span><br></pre></td></tr></table></figure>
 <p><strong>尤其注意格式，冒号和值之间要预留一个空格！</strong></p>
 <p>除了<code>deploy</code>，<code>theme</code>也是一个要修改的地方，因为默认的主题，实在太丑。</p>
 <h2 id="使用">使用</h2><p>详细的使用也可参考<a href="http://hexo.io/docs/commands.html" target="_blank" rel="external">官网</a>, 不过我觉得，<code>hexo</code>的使用还是相当简单，来来去去都是这几个命令：</p>

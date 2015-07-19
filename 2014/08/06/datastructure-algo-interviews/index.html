@@ -1,86 +1,83 @@
-
- <!DOCTYPE HTML>
-<html >
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>Top Data Structures and Algorithm Interview Questions | TechYC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="Derek.YC">
-    
-    <meta name="description" content="StringHow to reverse String in Java ?
+  <title>Top Data Structures and Algorithm Interview Questions - TechYC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="StringHow to reverse String in Java ?
 Write code to check a String is palindrome or not?
-Write a method which will remove any given character from a S">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+Write a method which will remove any given character from a String?
+Print all permutation of String both iterat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Top Data Structures and Algorithm Interview Questions">
+<meta property="og:url" content="http://derekyangyc.github.io/2014/08/06/datastructure-algo-interviews/index.html">
+<meta property="og:site_name" content="TechYC">
+<meta property="og:description" content="StringHow to reverse String in Java ?
+Write code to check a String is palindrome or not?
+Write a method which will remove any given character from a String?
+Print all permutation of String both iterat">
+<meta property="og:updated_time" content="2015-04-26T14:32:53.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Top Data Structures and Algorithm Interview Questions">
+<meta name="twitter:description" content="StringHow to reverse String in Java ?
+Write code to check a String is palindrome or not?
+Write a method which will remove any given character from a String?
+Print all permutation of String both iterat">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="//webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
 </head>
-
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="TechYC">TechYC</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-                    <ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-					<li>
-					
-					</li>
-                <li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>
-
-				</ul>
-			</nav>	
-</div>
-
-    </header>
-    <div id="container" class="clearfix">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/06/datastructure-algo-interviews/" title="Top Data Structures and Algorithm Interview Questions" itemprop="url">Top Data Structures and Algorithm Interview Questions</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://derekyangyc.github.io" title="Derek.YC">Derek.YC</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2014-08-06T07:38:26.000Z" itemprop="datePublished">Aug 6 2014</time>
-    更新日期:<time datetime="2015-04-26T14:32:53.903Z" itemprop="dateModified">Apr 26 2015</time>
-    
-  </p>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://derekyangyc.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
 </header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">2.</span> <span class="toc-text">Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">3.</span> <span class="toc-text">Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stack_&_Queue"><span class="toc-number">4.</span> <span class="toc-text">Stack & Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList"><span class="toc-number">5.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting_&_Searching"><span class="toc-number">6.</span> <span class="toc-text">Sorting & Searching</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tree"><span class="toc-number">7.</span> <span class="toc-text">Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash"><span class="toc-number">8.</span> <span class="toc-text">Hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Recusive_or_DP"><span class="toc-number">9.</span> <span class="toc-text">Recusive or DP</span></a></li></ol>
-		</div>
-		
-		<h2 id="String">String</h2><p><strong>How to reverse String in Java ?</strong></p>
+    <section id="main" class="outer"><article id="post-datastructure-algo-interviews" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Top Data Structures and Algorithm Interview Questions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2014/08/06/datastructure-algo-interviews/" class="article-date">
+  <time datetime="2014-08-06T07:38:26.000Z" itemprop="datePublished">Aug 6 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/interview/">interview</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="String">String</h2><p><strong>How to reverse String in Java ?</strong></p>
 <p><strong>Write code to check a String is palindrome or not?</strong></p>
 <p><strong>Write a method which will remove any given character from a String?</strong></p>
 <p><strong>Print all permutation of String both iterative and Recursive way?</strong></p>
@@ -127,304 +124,56 @@ Write a method which will remove any given character from a S">
 <p><strong>Write code to print InOrder traversal of a tree?</strong></p>
 <p><strong>Print out all leaf node of a binary tree?</strong></p>
 <h2 id="Hash">Hash</h2><p><strong>Write your own HashMap/Hashtable implementation</strong></p>
-<h2 id="Recusive_or_DP">Recusive or DP</h2>  
-	</div>
-		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
+<h2 id="Recusive_or_DP">Recusive or DP</h2>
+      
+    </div>
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/data-structure/">data structure</a><a href="/tags/interview/">interview</a>
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interview/">interview</a></li></ul>
+
+    </footer>
+  
   </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/interview/">interview</a>
-</div>
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://derekyangyc.github.io/2014/08/06/datastructure-algo-interviews/" data-title="Top Data Structures and Algorithm Interview Questions | TechYC" data-tsina="null" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2014/08/07/leetcode-triangle/" title="Leetcode-Triangle">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Leetcode-Triangle</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2014/08/06/create-blog-with-hexo/"  title="使用Hexo搭建博客">
- <strong>NEXT:</strong><br/> 
- <span>使用Hexo搭建博客
-</span>
-</a>
-</div>
-
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/08/07/leetcode-triangle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Leetcode-Triangle
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/08/06/create-blog-with-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Hexo搭建博客&nbsp;<span>&gt;</span></div>
+    </a>
+  
 </nav>
 
-	
-
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"yyc"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-</div>  
-      
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">2.</span> <span class="toc-text">Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">3.</span> <span class="toc-text">Array</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stack_&_Queue"><span class="toc-number">4.</span> <span class="toc-text">Stack & Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList"><span class="toc-number">5.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting_&_Searching"><span class="toc-number">6.</span> <span class="toc-text">Sorting & Searching</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tree"><span class="toc-number">7.</span> <span class="toc-text">Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash"><span class="toc-number">8.</span> <span class="toc-text">Hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Recusive_or_DP"><span class="toc-number">9.</span> <span class="toc-text">Recusive or DP</span></a></li></ol>
-  </div>
-
-<div id="asidepart">
-<div id="authorInfo">
-	
-		<div class="author-logo"></div>		
-	
-	
-	<div class="social-font" class="clearfix">
-		
-		
-		
-		<a href="https://github.com/DerekYangYC" target="_blank" title="github"></a>
-		
-		
-	</div>
-</div>
-<aside class="clearfix">
-
-
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-			<li><a href="/categories/interview/" title="interview">interview<sup>1</sup></a></li>
-		
-			<li><a href="/categories/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
-		
-		</ul>
-</div>
+</article>
 
-
+</section>
+    <footer id="footer">
   
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">5</span></li></ul>
-  </div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>3</sup></a></li>
-		
-			<li><a href="/tags/company/" title="company">company<sup>1</sup></a></li>
-		
-			<li><a href="/tags/data-structure/" title="data structure">data structure<sup>1</sup></a></li>
-		
-			<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
-		
-			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
-		
-			<li><a href="/tags/interview/" title="interview">interview<sup>1</sup></a></li>
-		
-			<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>2</sup></a></li>
-		
-		</ul>
-</div>
-
-
-</aside>
-</div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Derek.YC&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
     </div>
-    <footer><div id="footer" >
-
-</div>
+  </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  //back to top
-  function backToTop(){
-    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
-    buttonHTML.appendTo($("body"));
-    var buttonToTop = $("#back-top");
-    // hide #back-top first
-    buttonToTop.hide();
+    
 
-    // fade in #back-top
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                buttonToTop.fadeIn();
-            } else {
-                buttonToTop.fadeOut();
-            }
-        });
-        // scroll body to 0px on click
-        buttonToTop.click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-    });
-  }
-  backToTop();
-
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      ta = $('#toc.toc-aside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-
-  var show = true;
-  c.click(function(){
-    if(show == true){
-        a.addClass('fadeOut').css('display', 'none');
-        ta.css('display', 'block').addClass('fadeIn');
-        m.addClass('moveMain');  
-    }else{
-        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
-        ta.css('display', 'none'); 
-        m.removeClass('moveMain');
-        $('#toc.toc-aside').css('display', 'none');
-    }
-    show = !show;
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,240-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
-
-
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"yyc"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
+<script src="/js/jquery.min.js"></script>
 
 
 
-
-
-<script type="text/x-mathjax-config"> 
-MathJax.Hub.Config({ 
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
-}); 
-</script>
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-  </body>
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
 </html>
