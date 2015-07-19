@@ -14,7 +14,7 @@
 <meta property="og:description" content="最近觉得用markdown来写点东西，是个相当愉快的过程，因此萌生了搭一个支持markdown的博客。比较来比较去，觉得github+hexo比较方便快捷，而且够geek。
 安装由于我在windows使用hexo，安装过程也略微叙述一下。安装hexo需要用到git和node.js，git和node.js的安装很简单，下载对应版本，一路next即可。linux命令行环境的模拟，可以利用git bas">
 <meta property="og:image" content="http://derekyangyc.github.io/img/duoshuo.png">
-<meta property="og:updated_time" content="2015-04-26T14:57:11.186Z">
+<meta property="og:updated_time" content="2015-07-19T06:16:23.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建博客">
 <meta name="twitter:description" content="最近觉得用markdown来写点东西，是个相当愉快的过程，因此萌生了搭一个支持markdown的博客。比较来比较去，觉得github+hexo比较方便快捷，而且够geek。
@@ -39,6 +39,10 @@
       <nav id="main-nav">
         
           <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
         
           <a class="main-nav-link" href="/about">About</a>
         
@@ -81,6 +85,7 @@
 <p>安装完毕后，进入一个目录，输入如下命令即可新建一个<code>hexo</code>工程：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，<code>npm install</code>不可缺少。否则的话会出现<a href="https://github.com/hexojs/hexo/issues/632" target="_blank" rel="external">生成页面错误</a>。</p>
+<a id="more"></a>
 <h2 id="配置">配置</h2><p>配置方面，大部分配置可参考<a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">官网</a>。</p>
 <p>要注意的是，默认情况<code>deploy</code>是空，需要手动加入。例如我们要<code>deploy</code>到<code>github</code>上：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: github&#10;  repo: git@github.com:DerekYangYC/derekyangyc.github.io.git</span><br></pre></td></tr></table></figure>

@@ -15,7 +15,7 @@ For example, given the following triangle
 <meta property="og:description" content="Triangle题目Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
 For example, given the following triangle
 1[&amp;#10;     [2],&amp;#10;">
-<meta property="og:updated_time" content="2015-04-26T14:32:53.903Z">
+<meta property="og:updated_time" content="2015-07-19T06:18:01.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-Triangle">
 <meta name="twitter:description" content="Triangle题目Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
@@ -41,6 +41,10 @@ For example, given the following triangle
       <nav id="main-nav">
         
           <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
         
           <a class="main-nav-link" href="/about">About</a>
         
@@ -85,6 +89,7 @@ For example, given the following triangle
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#10;     [2],&#10;    [3,4],&#10;   [6,5,7],&#10;  [4,1,8,3]&#10;]</span><br></pre></td></tr></table></figure>
 <p>The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).</p>
 <p>Note:<br>Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.</p>
+<a id="more"></a>
 <h3 id="思路">思路</h3><p>经典DP题目，与<a href="http://poj.org/problem?id=1163" target="_blank" rel="external">POJ 1163</a>几乎一样。</p>
 <h4 id="第一次尝试">第一次尝试</h4><p>第一次尝试并未做对。只找出每一行的最小，然后加起来，这样的方法并不正确。像</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#10;     [2],&#10;    [3,4],&#10;   [6,5,2],&#10;  [1,5,8,3]&#10;]</span><br></pre></td></tr></table></figure>

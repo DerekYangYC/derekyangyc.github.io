@@ -15,7 +15,7 @@ The robot can only move either down or right at any point in time. The robot is 
 The robot can only move either down or right at any point in time. The robot is trying to">
 <meta property="og:image" content="http://derekyangyc.github.io/img/robot_maze.png">
 <meta property="og:image" content="http://derekyangyc.github.io/img/lattice_paths_4.png">
-<meta property="og:updated_time" content="2015-04-26T14:32:53.903Z">
+<meta property="og:updated_time" content="2015-07-19T06:15:08.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode-Unique Paths">
 <meta name="twitter:description" content="Unique Paths题目A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).
@@ -40,6 +40,10 @@ The robot can only move either down or right at any point in time. The robot is 
       <nav id="main-nav">
         
           <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
         
           <a class="main-nav-link" href="/about">About</a>
         
@@ -85,6 +89,7 @@ The robot can only move either down or right at any point in time. The robot is 
 <p><img src="/img/robot_maze.png" alt=""></p>
 <p>Above is a 3 x 7 grid. How many possible unique paths are there?</p>
 <p>Note: m and n will be at most 100.</p>
+<a id="more"></a>
 <h3 id="思路">思路</h3><p>此题与<code>Project Euler</code>的<a href="http://projecteuler.net/problem=15" target="_blank" rel="external">第15题</a>类似。</p>
 <p>题目可以抽象为在坐标的第四象限，从原点(0,0)走到(m-1,n-1)有多少种方法。</p>
 <p>关键的思路在于，发现<code>到(x,y)的走法数=到(x-1,y)的走法数+到(x,y-1)的走法数</code>，如下图</p>
